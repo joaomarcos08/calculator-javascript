@@ -26,16 +26,13 @@ class CalcControler {
             let text = e.clipboardData.getData('Text');
 
             this.displayCalc = parseFloat(text);
-
-            console.log(text);
-
         });
 
     }
 
     copyToClipboard(){
 
-        let input = document.createElement('input');
+        let input = document.createElement("input");
 
         input.value = this.displayCalc;
 
@@ -137,7 +134,9 @@ class CalcControler {
                     break;     
                     
                 case 'c':
-                    if(e.ctrlKey) this.copyToClipboard();
+                    if (e.ctrlKey) {
+                        this.copyToClipboard();
+                    } 
                     break;
             }   
         });
@@ -450,8 +449,8 @@ class CalcControler {
         this._dateEL.innerHTML= value;
     }
 
-    get displdisplayCalcayDate(){
-        return _displayCalcEL.innerHTML;
+    get displayCalc(){
+        return this._displayCalcEL.innerHTML;
     }
 
     set displayCalc(value){
